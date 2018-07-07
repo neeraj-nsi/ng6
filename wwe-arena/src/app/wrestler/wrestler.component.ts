@@ -8,11 +8,12 @@ import { FIGHTERS } from '../mock-fighters';
   styleUrls: ['./wrestler.component.css']
 })
 export class WrestlerComponent implements OnInit {
-  fighters = FIGHTERS;	
-  fighter : Fighter = {
-	  id: 1,
-	  name: "UnderTaker"
-  };
+	fighters = FIGHTERS;	
+	selectedFighter: Fighter;
+
+	onSelect(fighter: Fighter): void {
+	  this.selectedFighter = fighter;
+	}
   constructor() { }
 
   ngOnInit() {
